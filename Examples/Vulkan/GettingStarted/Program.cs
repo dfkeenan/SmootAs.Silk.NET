@@ -407,10 +407,7 @@ unsafe class HelloTriangleApplication
             createInfo.PNext = null;
         }
 
-        if (vk.CreateInstance(createInfo, null, out instance) != Result.Success)
-        {
-            throw new Exception("failed to create instance!");
-        }
+        ThrowIfInvalid(vk.CreateInstance(createInfo, null, out instance),"failed to create instance!");        
 
         Marshal.FreeHGlobal((IntPtr)appInfo.PApplicationName);
         Marshal.FreeHGlobal((IntPtr)appInfo.PEngineName);
@@ -444,10 +441,7 @@ unsafe class HelloTriangleApplication
         DebugUtilsMessengerCreateInfoEXT createInfo = new();
         PopulateDebugMessengerCreateInfo(ref createInfo);
 
-        if (debugUtils!.CreateDebugUtilsMessenger(instance, in createInfo, null, out debugMessenger) != Result.Success)
-        {
-            throw new Exception("failed to set up debug messenger!");
-        }
+        ThrowIfInvalid(debugUtils!.CreateDebugUtilsMessenger(instance, in createInfo, null, out debugMessenger), "failed to set up debug messenger!");
     }
 
     private void CreateSurface()
@@ -620,10 +614,7 @@ unsafe class HelloTriangleApplication
             }
         }
 
-        if (khrSwapChain!.CreateSwapchain(device, creatInfo, null, out swapChain) != Result.Success)
-        {
-            throw new Exception("failed to create swap chain!");
-        }
+        ThrowIfInvalid(khrSwapChain!.CreateSwapchain(device, creatInfo, null, out swapChain), "failed to create swap chain!");
 
         khrSwapChain.GetSwapchainImages(device, swapChain, ref imageCount, null);
         swapChainImages = new Image[imageCount];

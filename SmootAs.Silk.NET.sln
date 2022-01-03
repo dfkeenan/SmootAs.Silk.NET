@@ -3,9 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{586282C5-761B-4BEE-B539-2B9054B14642}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vulkan", "Vulkan", "{461209E1-07B3-4E57-83CF-9F922BDCE973}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vulkan", "Vulkan", "{9BE26CF0-A060-4A35-A586-8CBF4432ABF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmoothAs.Silk.NET.Vulkan", "Source\Vulkan\SmoothAs.Silk.NET.Vulkan\SmoothAs.Silk.NET.Vulkan.csproj", "{9798F504-8F1E-4801-B97E-14DDBCE4BA75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GettingStarted", "Examples\Vulkan\GettingStarted\GettingStarted.csproj", "{51B03A9A-489F-4DD1-AE1E-F3E83B81D5E1}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9798F504-8F1E-4801-B97E-14DDBCE4BA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9798F504-8F1E-4801-B97E-14DDBCE4BA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9798F504-8F1E-4801-B97E-14DDBCE4BA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9798F504-8F1E-4801-B97E-14DDBCE4BA75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B03A9A-489F-4DD1-AE1E-F3E83B81D5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B03A9A-489F-4DD1-AE1E-F3E83B81D5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B03A9A-489F-4DD1-AE1E-F3E83B81D5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B03A9A-489F-4DD1-AE1E-F3E83B81D5E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{461209E1-07B3-4E57-83CF-9F922BDCE973} = {586282C5-761B-4BEE-B539-2B9054B14642}
+		{9798F504-8F1E-4801-B97E-14DDBCE4BA75} = {9BE26CF0-A060-4A35-A586-8CBF4432ABF5}
+		{51B03A9A-489F-4DD1-AE1E-F3E83B81D5E1} = {461209E1-07B3-4E57-83CF-9F922BDCE973}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7607FFDB-5393-4673-BE02-2CCBC7B35CAA}

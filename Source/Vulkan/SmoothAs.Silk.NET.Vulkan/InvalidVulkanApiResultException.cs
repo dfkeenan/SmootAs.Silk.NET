@@ -36,7 +36,7 @@ public class InvalidVulkanApiResultException : VulkanException
 
         info.AddValue(nameof(Result), Result);
 
-        info.AddValue(nameof(ResultExpression),ResultExpression);
+        info.AddValue(nameof(ResultExpression), ResultExpression);
 
         base.GetObjectData(info, context);
     }

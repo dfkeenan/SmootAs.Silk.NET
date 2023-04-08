@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
@@ -15,12 +10,12 @@ public unsafe partial class VulkanInstance
 {
 
     public static VulkanInstanceBuilder CreateBuilder(IVkSurfaceSource surfaceSource) => new VulkanInstanceBuilder(Vk.GetApi(), surfaceSource);
-    public static VulkanInstanceBuilder CreateBuilder(IVkSurfaceSource surfaceSource,Vk vk) => new VulkanInstanceBuilder(vk, surfaceSource);
+    public static VulkanInstanceBuilder CreateBuilder(IVkSurfaceSource surfaceSource, Vk vk) => new VulkanInstanceBuilder(vk, surfaceSource);
 }
 
 public unsafe sealed class VulkanInstanceBuilder
 {
-	private readonly Vk vk;
+    private readonly Vk vk;
     private readonly IVkSurfaceSource surfaceSource;
 
     private readonly List<string> layers = new();
@@ -53,7 +48,7 @@ public unsafe sealed class VulkanInstanceBuilder
             throw new ArgumentNullException(nameof(validationLayers));
         }
 
-        if(enableValidationLayers) return this;
+        if (enableValidationLayers) return this;
 
         enableValidationLayers = true;
         this.layers.AddRange(validationLayers);
@@ -97,7 +92,7 @@ public unsafe sealed class VulkanInstanceBuilder
             PpEnabledExtensionNames = (byte**)SilkMarshal.StringArrayToPtr(extensions),
 
             EnabledLayerCount = 0,
-            PNext = null,           
+            PNext = null,
         };
 
         if (enableValidationLayers)

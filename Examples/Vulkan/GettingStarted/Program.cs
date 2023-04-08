@@ -1,19 +1,14 @@
-﻿using System.Drawing;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Silk.NET.Core;
+using Silk.NET.Assimp;
 using Silk.NET.Core.Native;
-using Silk.NET.Input;
 using Silk.NET.Maths;
-using Silk.NET.Vulkan;
-using Silk.NET.Vulkan.Extensions.EXT;
 using Silk.NET.Vulkan.Extensions.KHR;
 using Silk.NET.Windowing;
-using Semaphore = Silk.NET.Vulkan.Semaphore;
+using SmoothAs.Silk.NET.Vulkan;
 using Buffer = Silk.NET.Vulkan.Buffer;
 using Image = Silk.NET.Vulkan.Image;
-using Silk.NET.Assimp;
-using SmoothAs.Silk.NET.Vulkan;
+using Semaphore = Silk.NET.Vulkan.Semaphore;
 
 var app = new HelloTriangleApplication();
 app.Run();
@@ -318,7 +313,7 @@ unsafe class HelloTriangleApplication
 
         vk.DestroyCommandPool(device, commandPool, null);
 
-        vk.DestroyDevice(device, null);        
+        vk.DestroyDevice(device, null);
 
         khrSurface!.DestroySurface(instance, surface, null);
         instance.Dispose();
@@ -361,7 +356,7 @@ unsafe class HelloTriangleApplication
                                  .EnableValidationLayers()
                                  .Build();
 
-        vk = instance.API;       
+        vk = instance.API;
     }
 
     private void CreateSurface()
@@ -1333,7 +1328,7 @@ unsafe class HelloTriangleApplication
                         var position = mesh->MVertices[index];
                         var texture = mesh->MTextureCoords[0][(int)index];
 
-                        Vertex vertex = new ()
+                        Vertex vertex = new()
                         {
                             pos = new Vector3D<float>(position.X, position.Y, position.Z),
                             color = new Vector3D<float>(1, 1, 1),

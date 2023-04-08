@@ -11,14 +11,14 @@ namespace SmoothAs.Silk.NET.Vulkan;
 public unsafe class VulkanDebugUtilMessenger: IDisposable
 {
     public const DebugUtilsMessageSeverityFlagsEXT DefaultMessageSeverityFlags
-        = DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityVerboseBitExt |
-          DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityWarningBitExt |
-          DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityErrorBitExt;
+        = DebugUtilsMessageSeverityFlagsEXT.VerboseBitExt |
+          DebugUtilsMessageSeverityFlagsEXT.WarningBitExt |
+          DebugUtilsMessageSeverityFlagsEXT.ErrorBitExt;
 
     public const DebugUtilsMessageTypeFlagsEXT DefaultMessageTypeFlags
-        = DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeGeneralBitExt |
-          DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypePerformanceBitExt |
-          DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeValidationBitExt;
+        = DebugUtilsMessageTypeFlagsEXT.GeneralBitExt |
+          DebugUtilsMessageTypeFlagsEXT.PerformanceBitExt |
+          DebugUtilsMessageTypeFlagsEXT.ValidationBitExt;
 
     private ExtDebugUtils debugUtils = default!;
     private DebugUtilsMessengerEXT debugMessenger;

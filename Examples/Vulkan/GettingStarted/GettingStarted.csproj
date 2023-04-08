@@ -9,9 +9,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Silk.NET" Version="2.11.0" />
-		<PackageReference Include="Silk.NET.Assimp" Version="2.11.0" />
-		<PackageReference Include="SixLabors.ImageSharp" Version="1.0.4" />
+		<PackageReference Include="Silk.NET" Version="2.17.0" />
+		<PackageReference Include="Silk.NET.Assimp" Version="2.17.0" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.0.1" />
 	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Source\Vulkan\SmoothAs.Silk.NET.Vulkan\SmoothAs.Silk.NET.Vulkan.csproj" />
